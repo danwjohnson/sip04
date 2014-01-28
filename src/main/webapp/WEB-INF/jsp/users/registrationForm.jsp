@@ -19,19 +19,29 @@
                 <h1><c:out value="${pageTitle}" /></h1>
                 
                 <form:form cssClass="main" action="${submitRegistrationUrl}" modelAttribute="account">
+                        <form:errors path="*">
+                                <div class="warning alert"><spring:message code="error.global" /></div>
+                        </form:errors>
+                        
                         <p><spring:message code="newUserRegistration.message.allFieldsRequired" /></p>
                         
                         <div class="panel grid">
                                 <div class="gridRow yui-gf">
                                         <div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.username" /></div>
                                         <div class="yui-u">
-                                                <div><form:input path="username" cssClass="short" /></div>
+                                                <div><form:input path="username" cssClass="short" cssErrorClass="short error" /></div>
+                                                <form:errors path="username">
+                                                        <div class="errorMessage"><form:errors path="username" htmlEscape="false" /></div>
+                                                </form:errors>
                                         </div>
                                 </div>
                                 <div class="gridRow yui-gf">
                                         <div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.password" /></div>
                                         <div class="yui-u">
-                                                <div><form:password path="password" showPassword="false" cssClass="short" /></div>
+                                                <div><form:password path="password" showPassword="false" cssClass="short" cssErrorClass="short error" /></div>
+                                                <form:errors path="password">
+                                                        <div class="errorMessage"><form:errors path="password" htmlEscape="false" /></div>
+                                                </form:errors>
                                         </div>
                                 </div>
                                 <div class="gridRow yui-gf">
@@ -43,19 +53,28 @@
                                 <div class="gridRow yui-gf">
                                         <div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.firstName" /></div>
                                         <div class="yui-u">
-                                                <div><form:input path="firstName" cssClass="short" /></div>
+                                                <div><form:input path="firstName" cssClass="short" cssErrorClass="short error" /></div>
+                                                <form:errors path="firstName">
+                                                        <div class="errorMessage"><form:errors path="firstName" htmlEscape="false" /></div>
+                                                </form:errors>
                                         </div>
                                 </div>
                                 <div class="gridRow yui-gf">
                                         <div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.lastName" /></div>
                                         <div class="yui-u">
-                                                <div><form:input path="lastName" cssClass="short" /></div>
+                                                <div><form:input path="lastName" cssClass="short" cssErrorClass="short error" /></div>
+                                                <form:errors path="lastName">
+                                                        <div class="errorMessage"><form:errors path="lastName" htmlEscape="false" /></div>
+                                                </form:errors>
                                         </div>
                                 </div>
                                 <div class="gridRow yui-gf">
                                         <div class="fieldLabel yui-u first"><spring:message code="newUserRegistration.label.email" /></div>
                                         <div class="yui-u">
-                                                <div><form:input path="email" cssClass="medium" /></div>
+                                                <div><form:input path="email" cssClass="medium" cssErrorClass="medium error" /></div>
+                                                <form:errors path="email">
+                                                        <div class="errorMessage"><form:errors path="email" htmlEscape="false" /></div>
+                                                </form:errors>
                                         </div>
                                 </div>
                                 <div class="gridRow yui-gf">
@@ -69,9 +88,12 @@
                                         <div class="yui-u first"></div>
                                         <div class="yui-u">
                                                 <div>
-                                                        <form:checkbox id="acceptTerms" path="acceptTerms" />
+                                                        <form:checkbox id="acceptTerms" path="acceptTerms" cssErrorClass="error" />
                                                         <label for="acceptTerms"><spring:message code="newUserRegistration.label.acceptTerms" /></label>
                                                 </div>
+                                                <form:errors path="acceptTerms">
+                                                        <div class="errorMessage"><form:errors path="acceptTerms" htmlEscape="false" /></div>
+                                                </form:errors>
                                         </div>
                                 </div>
                                 <div class="gridRow yui-gf">

@@ -1,8 +1,18 @@
 package com.springinpractice.ch04.web;
 
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.ScriptAssert;
 
+@ScriptAssert(
+		lang = "javascript",
+		script = "_this.confirmPassword.equals(_this.password)",
+		message = "account.password.mismatch.message")
 public class AccountForm {
 
 	private String username;
@@ -15,6 +25,9 @@ public class AccountForm {
 	private boolean marketingOk = true;
 	private boolean acceptTerms = false;
 	
+	
+	@NotNull
+	@Size(min = 1, max = 50)
 	public String getUsername() {
 		
 		return username;
@@ -28,7 +41,8 @@ public class AccountForm {
 		
 	} // end setUsername()
 	
-	
+	@NotNull
+	@Size(min = 6, max = 50)
 	public String getPassword() {
 		
 		return password;
@@ -57,6 +71,8 @@ public class AccountForm {
 	} // end setConfirmPassword()
 	
 	
+	@NotNull
+	@Size(min = 6, max = 50)
 	public String getFirstName() {
 		
 		return firstName;
@@ -71,6 +87,8 @@ public class AccountForm {
 	} // end setFirstName()
 	
 	
+	@NotNull
+	@Size(min = 6, max = 50)
 	public String getLastName() {
 		
 		return lastName;
@@ -84,7 +102,9 @@ public class AccountForm {
 		
 	} // end setLastName()
 	
-	
+	@NotNull
+	@Size(min = 6, max = 50)
+	@Email
 	public String getEmail() {
 		
 		return email;
@@ -113,6 +133,7 @@ public class AccountForm {
 	} // end setMarketingOk()
 	
 	
+	@AssertTrue(message = "{account.acceptTerms.assertTrue.message}")
 	public boolean getAcceptTerms() {
 		
 		return acceptTerms;
