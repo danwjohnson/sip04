@@ -19,6 +19,10 @@
 			basis for the remaining recipes in this chapter.</p>
 		]]></param-value>
 	</context-param>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:/spring/beans-service.xml</param-value>
+	</context-param>
 	<filter>
 		<filter-name>sitemesh</filter-name>
 		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>

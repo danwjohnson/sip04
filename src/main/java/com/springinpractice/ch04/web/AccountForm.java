@@ -119,7 +119,7 @@ public class AccountForm {
 	} // end setEmail()
 	
 	
-	public boolean getMarketingOk() {
+	public boolean isMarketingOk() {
 		
 		return marketingOk;
 		
