@@ -183,7 +183,7 @@ public class Account {
 	 * Get the marketing ok flag for the account
 	 * @return marketingOk
 	 */
-	@Column(name = "marekting_ok")
+	@Column(name = "marketing_ok")
 	public boolean isMarketingOk() {
 		
 		return marketingOk;

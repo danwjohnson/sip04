@@ -2,12 +2,15 @@ package com.springinpractice.ch04.service;
 
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Errors;
 
 import com.springinpractice.ch04.dao.AccountDao;
 import com.springinpractice.ch04.domain.Account;
 
+@Service
+@Transactional(readOnly = false)
 public class AccountServiceImpl implements AccountService {
 
 	@Inject private AccountDao accountDao;

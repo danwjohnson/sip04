@@ -10,19 +10,21 @@
 	</context-param>
 	<context-param>
 		<param-name>recipe</param-name>
-		<param-value>4.1</param-value>
+		<param-value>4.4</param-value>
 	</context-param>
 	<context-param>
 		<param-name>aboutThisRecipe</param-name>
 		<param-value><![CDATA[
-			<p>Recipe 4.1 shows how to use Spring Web MVC to create a basic user registration form. This recipe is the
-			basis for the remaining recipes in this chapter.</p>
+			<p>Recipe 4.4 saves the new user registration data into a database using Hibernate.</p>
 		]]></param-value>
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/spring/beans-service.xml</param-value>
 	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	<filter>
 		<filter-name>sitemesh</filter-name>
 		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>

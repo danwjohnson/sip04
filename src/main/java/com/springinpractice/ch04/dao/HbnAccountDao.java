@@ -4,10 +4,12 @@ import javax.inject.Inject;
 
 import org.hibernate.Query;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.springinpractice.ch04.domain.Account;
 import com.springinpractice.dao.hibernate.AbstractHbnDao;
 
+@Repository
 public class HbnAccountDao extends AbstractHbnDao<Account> implements AccountDao{
 
 	private static final String UPDATE_PASSWORD_SQL =
